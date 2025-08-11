@@ -1,0 +1,378 @@
+/* ===== Base Reset ===== */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* ===== Light Mode Background ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #800080, #FF69B4, #c263da);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* ===== Dark Mode Background ===== */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a5d96, #030b57, #1a5d96);
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+    text-align: center;
+}
+
+/* ===== Media Elements ===== */
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Table Styling ===== */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #FF69B4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+th {
+    background-color: #ff45b8;
+}
+
+tr:hover {
+    background-color: #aa5d83;
+}
+
+/* Dark Mode Table */
+body.dark-mode table {
+    background-color: #002E5D;
+    color: #f1f1f1;
+    border-color: #555 !important;
+}
+body.dark-mode th {
+    background-color: #2774AE !important;
+    color: #fff !important;
+}
+body.dark-mode td, 
+body.dark-mode pre {
+    background-color: #002E5D !important;
+    color: #ddd !important;
+}
+
+/* ===== Links ===== */
+a {
+    color: #002E5D;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    text-decoration: underline;
+}
+body.dark-mode a {
+    color: #90caf9;
+}
+
+/* ===== No Data ===== */
+.no-data {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+/* ===== Delete Button ===== */
+.delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+.delete-btn:hover {
+    color: darkred;
+}
+
+/* ===== Extracted Text ===== */
+.extracted-text {
+    display: none;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: #002E5D;
+    font-family: monospace;
+    white-space: pre-wrap;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+}
+
+/* ===== View Text Button ===== */
+.view-btn {
+    background-color: #FF69B4;
+    color: #002E5D;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.view-btn:hover {
+    background-color: #800080;
+    color: white;
+    transform: scale(1.05);
+}
+body.dark-mode .view-btn {
+    background-color: #2774AE;
+    color: white;
+}
+body.dark-mode .view-btn:hover {
+    background-color: #1a5d96;
+}
+
+/* ===== Generic Buttons ===== */
+button, a.button-link {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+button {
+    background-color: #002E5D;
+    color: white;
+}
+button:hover, a.button-link:hover {
+    background-color: #004a99;
+    color: white;
+}
+body.dark-mode button {
+    background-color: #2774AE;
+    color: white;
+}
+body.dark-mode button:hover {
+    background-color: #1a5d96;
+}
+
+/* ===== Top Navigation Buttons ===== */
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.top-btn {
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #800080;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.top-btn:hover {
+    background-color: #FF69B4;
+    transform: translateY(-2px);
+}
+body.dark-mode .top-btn {
+    background-color: #70a7d4;
+    color: white;
+}
+body.dark-mode .top-btn:hover {
+    background-color: #1a5d96;
+    color: white;
+}
+
+/* ===== Search Bar ===== */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.search-input, .search-select {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+    background: white;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.search-input {
+    width: 250px;
+}
+.search-input:focus, .search-select:focus {
+    border-color: #FF69B4;
+    box-shadow: 0 0 6px rgba(255, 105, 180, 0.6);
+}
+.search-select {
+    cursor: pointer;
+}
+
+/* Dark Mode Styling */
+body.dark-mode .search-input,
+body.dark-mode .search-select {
+    background-color: #1e1e2f;
+    color: white;
+    border: 1px solid #555;
+}
+body.dark-mode .search-input:focus,
+body.dark-mode .search-select:focus {
+    border-color: #70a7d4;
+    box-shadow: 0 0 6px rgba(112, 167, 212, 0.6);
+}
+
+/* ===== Upload Form Styling (Light Mode) ===== */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+.upload-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+.upload-container input[type="file"], 
+.upload-container input[type="text"] {
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #333;
+}
+
+/* Upload Button */
+.upload-btn {
+    background-color: #800080;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.upload-btn:hover {
+    background-color: #FF69B4;
+}
+
+/* ===== Upload Form Styling (Dark Mode) ===== */
+body.dark-mode .upload-container form {
+    background: #1a1a2e;
+    border: 1px solid #444;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+body.dark-mode .upload-container input[type="file"], 
+body.dark-mode .upload-container input[type="text"] {
+    background-color: #222;
+    color: #f1f1f1;
+    border: 1px solid #555;
+}
+body.dark-mode .upload-container input[type="file"]:focus,
+body.dark-mode .upload-container input[type="text"]:focus {
+    border-color: #70a7d4;
+    outline: none;
+}
+body.dark-mode .upload-btn {
+    background-color: #70a7d4;
+}
+body.dark-mode .upload-btn:hover {
+    background-color: #1a5d96;
+}
+
+/* ===== Flash Messages ===== */
+.flash-messages {
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 0;
+}
+.flash-message {
+    background: #d4edda;
+    color: #002E5D;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* Dark mode row hover */
+body.dark-mode tr:hover {
+    background-color: #70a7d4 !important; 
+}
+
+/* ===== Mobile Adjustments ===== */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+    th { display: none; }
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #002E5D;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+    button, a.button-link {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    form { flex-direction: column; }
+    input, button { width: 100%; }
+    button.view-btn {
+        width: auto !important;
+        min-width: 80px;
+    }
+}
